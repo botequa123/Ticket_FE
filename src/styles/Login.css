@@ -1,0 +1,131 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5a623, #f76b1c, #f44336, #e91e63, #9c27b0, #673ab7);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    /* Tăng padding để form to hơn */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    /* Tăng chiều rộng của form */
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.login-logo {
+    width: 120px;
+    height: auto;
+    border-radius: 10%;
+    position: absolute;
+    top: 0px;
+
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-top: 50px;
+    /* Dịch tiêu đề xuống dưới logo */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
+    transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in;
+    background-color: #fff;
+}
+
+.input-group input:focus {
+    box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+    outline: none;
+    background-color: #e0f7fa;
+}
+
+.input-group input::-webkit-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+}
+
+.input-group input:hover::-webkit-input-placeholder,
+.input-group input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f5a623, #f76b1c, #f44336, #e91e63, #9c27b0, #673ab7);
+    /* Cùng màu với background */
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #e09123, #e6671b, #e33336, #d11d63, #8c26b0, #5938b7);
+    /* Màu hơi tối hơn khi hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}

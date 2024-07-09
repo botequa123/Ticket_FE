@@ -1,0 +1,364 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+.selected-row {
+    background-color: #4652523e;
+}
+
+th,
+td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    color: #000000;
+}
+
+th {
+    background-color: #03adf6;
+}
+
+.priority-low {
+    background-color: rgb(1, 204, 255);
+}
+
+.priority-medium {
+    background-color: yellow;
+}
+
+.priority-high {
+    background-color: red;
+}
+
+.status-chua-xu-ly {
+    background-color: rgb(255, 255, 255);
+    color: rgb(249, 116, 0);
+}
+
+.status-dang-xu-ly {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 125, 10);
+}
+
+.status-da-xu-ly {
+    background-color: rgb(141, 241, 151);
+    color: rgb(251, 46, 46);
+}
+
+select {
+    width: 100%;
+    padding: 4px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.closing {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closing:hover,
+.closing:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styling */
+/* Thêm kiểu dáng cho edit modal "Sửa" */
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.edit-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+}
+
+.edit-modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.ticket-management-form .form-group {
+    margin-bottom: 15px;
+}
+
+.ticket-management-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.ticket-management-form input,
+.ticket-management-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ticket-management-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ticket-management-form button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.actions-button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.actions-button.edit {
+    background-color: #28a745;
+}
+
+.actions-button.edit:hover {
+    background-color: #218838;
+}
+
+.actions-button.delete {
+    background-color: #dc3545;
+}
+
+.actions-button.delete:hover {
+    background-color: #c82333;
+}
+
+.add-ticket-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-ticket-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    margin-right: 10px;
+}
+
+
+.right {
+    margin-left: auto;
+}
+
+.submenu {
+    background-color: #333;
+    padding: 0;
+    margin-left: 20px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.submenu.open {
+    max-height: 300px;
+    padding: 10px;
+}
+
+.submenu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.submenu a:hover {
+    text-decoration: underline;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 1150px;
+}
+
+.filter-container {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.handled-row {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* css cho view
+/* Thêm kiểu dáng cho view modal "Xem" */
+.view-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.view-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.view-modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.view-modal-section {
+    margin: 10px 0;
+}
+
+.view-modal-section label {
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.view-modal-section p {
+    margin: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.view-modal-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.view-modal-actions .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-modal-actions .btn:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
